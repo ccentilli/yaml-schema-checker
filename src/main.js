@@ -33,7 +33,7 @@ async function run() {
         const schemaContentAsJson = FileUtils.getContentFromJson(jsonSchemaFile);
         
         if (yamlFiles.indexOf(',') > -1) { 
-          const files = yamlFiles.split(',') 
+          const files = yamlFiles.split(',');
         } else {
           const files = FileUtils.searchFiles(yamlFiles);
         } 
