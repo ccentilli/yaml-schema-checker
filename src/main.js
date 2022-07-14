@@ -31,8 +31,12 @@ async function run() {
         core.info(`Yaml Files: ${yamlFiles}`);
 
         const schemaContentAsJson = FileUtils.getContentFromJson(jsonSchemaFile);
-
-        const files = FileUtils.searchFiles(yamlFiles);
+        
+        if (yamlFiles.indexOf(',') > -1) { 
+          const files = yamlFiles.split(',') 
+        } else {
+          const files = FileUtils.searchFiles(yamlFiles);
+        } 
 
         core.info(`Found ${files.length} file(s). Checking them:`);
 
